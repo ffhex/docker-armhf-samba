@@ -1,0 +1,13 @@
+
+samba_server:
+  restart: always
+  image: f2hex/armhf-samba
+  container_name: odin-samba
+  ports:
+    - 139
+    - 445
+  command: samba.sh -s "workpad;/share;yes;no;yes"
+  volumes:
+    - /mnt/syspad/shared:/share
+
+
